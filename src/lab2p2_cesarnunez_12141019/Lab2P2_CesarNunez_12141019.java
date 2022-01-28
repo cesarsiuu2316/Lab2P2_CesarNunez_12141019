@@ -82,6 +82,10 @@ public class Lab2P2_CesarNunez_12141019 {
                             + "2) Editar todos los atributos\n"
                             + "Ingrese una opción: ");
                     int opcion = input.nextInt();
+                    if(pos == -1){
+                        opcion = pos;
+                    }
+                    System.out.println();
                     
                     switch(opcion){
                         case -1:{
@@ -149,12 +153,20 @@ public class Lab2P2_CesarNunez_12141019 {
         return opcion;
     }
     
-    public static void agregarAnimales(){
-        System.out.print("Nombre científico: ");
-        String nci;
-        do{
+    public static void agregarAnimales(){   
+        input.nextLine();
+        String nci = "";
+        boolean encontrado = false;
+        while(encontrado == false){
+            encontrado = true;
+            System.out.print("Nombre científico: ");
             nci = input.nextLine();
-        }while(regAnimales.contains(nci));
+            for (Animales animal : regAnimales) {
+                if(animal.getnCientifico().equals(nci)){
+                    encontrado = false;
+                }
+            }
+        }
         System.out.print("Nombre común: ");
         String nc = input.nextLine();
         System.out.print("Hábitat: ");
@@ -183,6 +195,8 @@ public class Lab2P2_CesarNunez_12141019 {
                 + "7) Vida\n"
                 + "Ingrese una opción: ");
         int op = input.nextInt();
+        input.nextLine();
+        System.out.println();
         switch(op){
             case 1:{
                 System.out.print("Nombre científico: ");
@@ -201,7 +215,7 @@ public class Lab2P2_CesarNunez_12141019 {
             }
             case 4:{
                 System.out.print("Alimentación: ");
-                String al = input.nextLine();
+                regAnimales.get(pos).setAlimentacion(input.nextLine());
                 break;
             }
             case 5:{
@@ -223,19 +237,20 @@ public class Lab2P2_CesarNunez_12141019 {
     } // editarAtributo
     
     public static void editarTodosAtributos(int pos){
-        System.out.println("Nombre Cientifico: ");
+        input.nextLine();
+        System.out.print("Nombre Cientifico: ");
         regAnimales.get(pos).setnCientifico(input.nextLine());
-        System.out.println("Nombre Comun: ");
+        System.out.print("Nombre Comun: ");
         regAnimales.get(pos).setnComun(input.nextLine());
-        System.out.println("Habitat: ");
+        System.out.print("Habitat: ");
         regAnimales.get(pos).setHabitat(input.nextLine());
-        System.out.println("Alimentacion: ");
+        System.out.print("Alimentacion: ");
         regAnimales.get(pos).setAlimentacion(input.nextLine());
-        System.out.println("Rasgos descriptivos: ");
+        System.out.print("Rasgos descriptivos: ");
         regAnimales.get(pos).setRasgos(input.nextLine());
-        System.out.println("Distribucion Geografica: ");
+        System.out.print("Distribucion Geografica: ");
         regAnimales.get(pos).setGeografica(input.nextLine());
-        System.out.println("Vida: ");
+        System.out.print("Vida: ");
         regAnimales.get(pos).setVida(input.nextInt());
     }
     

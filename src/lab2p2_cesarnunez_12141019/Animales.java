@@ -82,13 +82,13 @@ public class Animales {
     
     @Override
     public String toString(){
-        return "Nombre científico " + nCientifico + 
-                ", Nombre común " + nComun +
-                ", Hábitat " + habitat +
-                ", Alimentación " + alimentacion +
-                ", Descripción de rasgos " + rasgos +
-                ", Distribución geográfica " + geografica +
-                ", Vida " + vida;                
+        return "Nombre científico: " + nCientifico + 
+                ", Nombre común: " + nComun +
+                ", Hábitat: " + habitat +
+                ", Alimentación: " + alimentacion +
+                ", Descripción de rasgos: " + rasgos +
+                ", Distribución geográfica: " + geografica +
+                ", Vida: " + vida;                
     }
     
 }

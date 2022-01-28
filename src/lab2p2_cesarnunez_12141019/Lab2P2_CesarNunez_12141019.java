@@ -67,27 +67,32 @@ public class Lab2P2_CesarNunez_12141019 {
                         
                         case 3:{
                             System.out.print("Nombre científico: ");
-                            //for (Animales regAnimale : regAnimales) {
-                                //if(regAnimale.equals(nc))
-                            //}
+                            String nc = input.nextLine();
+                            for (Animales regAnimale : regAnimales) {
+                                if(regAnimale.equals(nc)){
+                                    System.out.println(regAnimale.toString());
+                                }
+                            }
                             break;
                         }
                     }
                     break;
                 }
 
-                case 3:{
-
+                case 3:{ // modificar animales
+                    System.out.print("Nombre científico");
+                    String nc = input.next();
+                    System.out.println("1) ");
                     break;
                 }
 
                 case 4:{
-
+                    
                     break;
                 }
 
                 case 5:{
-
+                    
                     break;
                 }
 

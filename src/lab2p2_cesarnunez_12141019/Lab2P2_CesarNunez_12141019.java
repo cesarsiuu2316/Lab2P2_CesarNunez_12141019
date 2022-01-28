@@ -102,13 +102,22 @@ public class Lab2P2_CesarNunez_12141019 {
                     break;
                 }
 
-                case 4:{
-                    
+                case 4:{ // alimentar
+                    System.out.print("Posición del animal que se alimentará: ");
+                    int pos = input.nextInt();
+                    System.out.print("Posición del animal que será devorado: ");
+                    int pos2 = input.nextInt();
+                    if(pos < regAnimales.size() && pos >= 0 && pos != pos2){
+                        regAnimales.get(pos).setVida(regAnimales.get(pos).getVida() + (regAnimales.get(pos2).getVida()));
+                    }else{
+                        System.out.println("Las posiciones son inválidas!");
+                    }
                     break;
                 }
 
                 case 5:{
-                    
+                    System.out.print("Posición del animal que desea eliminar: ");
+                    int pos = input.nextInt();
                     break;
                 }
 
@@ -155,7 +164,10 @@ public class Lab2P2_CesarNunez_12141019 {
         System.out.print("Distribución geográfica: ");
         String dg = input.nextLine();
         System.out.print("Vida: ");
-        int ed = input.nextInt();
+        int ed;
+        do{
+            ed = input.nextInt();
+        }while(ed <= 0);
         regAnimales.add(new Animales(nci, nc, ha, al, rd, dg, ed));    
     }
     
@@ -223,6 +235,10 @@ public class Lab2P2_CesarNunez_12141019 {
         regAnimales.get(pos).setGeografica(input.nextLine());
         System.out.println("Vida: ");
         regAnimales.get(pos).setVida(input.nextInt());
+    }
+    
+    public static void eliminar(int pos){
+        
     }
     
 }

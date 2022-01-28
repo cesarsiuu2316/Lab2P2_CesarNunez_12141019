@@ -109,6 +109,7 @@ public class Lab2P2_CesarNunez_12141019 {
                     int pos2 = input.nextInt();
                     if(pos < regAnimales.size() && pos >= 0 && pos != pos2){
                         regAnimales.get(pos).setVida(regAnimales.get(pos).getVida() + (regAnimales.get(pos2).getVida()));
+                        eliminar(pos2);
                     }else{
                         System.out.println("Las posiciones son inválidas!");
                     }
@@ -118,6 +119,7 @@ public class Lab2P2_CesarNunez_12141019 {
                 case 5:{
                     System.out.print("Posición del animal que desea eliminar: ");
                     int pos = input.nextInt();
+                    eliminar(pos);
                     break;
                 }
 
@@ -238,7 +240,7 @@ public class Lab2P2_CesarNunez_12141019 {
     }
     
     public static void eliminar(int pos){
-        
+        regAnimales.remove(pos);
     }
     
 }

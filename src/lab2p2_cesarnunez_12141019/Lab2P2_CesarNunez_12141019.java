@@ -229,8 +229,12 @@ public class Lab2P2_CesarNunez_12141019 {
                 break;
             }
             case 7:{
-                System.out.print("Vida: ");
-                regAnimales.get(pos).setVida(input.nextInt());
+                int vida;
+                do{
+                    System.out.print("Vida: ");
+                    vida = input.nextInt();
+                }while(vida <= 0);
+                regAnimales.get(pos).setVida(vida);
                 break;
             }
         } // switch
@@ -250,8 +254,12 @@ public class Lab2P2_CesarNunez_12141019 {
         regAnimales.get(pos).setRasgos(input.nextLine());
         System.out.print("Distribucion Geografica: ");
         regAnimales.get(pos).setGeografica(input.nextLine());
-        System.out.print("Vida: ");
-        regAnimales.get(pos).setVida(input.nextInt());
+        int vida;
+        do{
+            System.out.print("Vida: ");
+            vida = input.nextInt();
+        }while(vida <= 0);
+        regAnimales.get(pos).setVida(vida);
     }
     
     public static void eliminar(int pos){

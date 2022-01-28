@@ -199,8 +199,19 @@ public class Lab2P2_CesarNunez_12141019 {
         System.out.println();
         switch(op){
             case 1:{
-                System.out.print("Nombre científico: ");
-                regAnimales.get(pos).setnCientifico(input.nextLine());
+                String nci = "";
+                boolean encontrado = false;
+                while(encontrado == false){
+                    encontrado = true;
+                    System.out.print("Nombre científico: ");
+                    nci = input.nextLine();
+                    for (Animales animal : regAnimales) {
+                        if(animal.getnCientifico().equals(nci)){
+                            encontrado = false;
+                        }
+                    }
+                }
+                regAnimales.get(pos).setnCientifico(nci);
                 break;
             }
             case 2:{
@@ -242,8 +253,19 @@ public class Lab2P2_CesarNunez_12141019 {
     
     public static void editarTodosAtributos(int pos){
         input.nextLine();
-        System.out.print("Nombre Cientifico: ");
-        regAnimales.get(pos).setnCientifico(input.nextLine());
+        String nci = "";
+        boolean encontrado = false;
+        while(encontrado == false){
+            encontrado = true;
+            System.out.print("Nombre científico: ");
+            nci = input.nextLine();
+            for (Animales animal : regAnimales) {
+                if(animal.getnCientifico().equals(nci)){
+                    encontrado = false;
+                }
+            }
+        }
+        regAnimales.get(pos).setnCientifico(nci);
         System.out.print("Nombre Comun: ");
         regAnimales.get(pos).setnComun(input.nextLine());
         System.out.print("Habitat: ");

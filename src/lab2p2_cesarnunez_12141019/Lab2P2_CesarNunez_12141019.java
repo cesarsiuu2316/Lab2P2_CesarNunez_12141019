@@ -32,18 +32,22 @@ public class Lab2P2_CesarNunez_12141019 {
                             + "3) Por nombre científico\n"
                             + "Ingrese una opción: ");
                     int opcion = input.nextInt();
+                    System.out.println();
                     
                     switch(opcion){
                         case 1:{
                             System.out.print("Ingrese la posición: ");
-                            int pos = input.nextInt();                            
+                            int pos = input.nextInt();     
+                            System.out.println();
                             System.out.println((regAnimales.get(pos)).toString());
                             break;
                         }
                         
                         case 2:{
+                            int i = 1;
                             for (Animales Animales : regAnimales) {
-                                System.out.println(Animales.toString());
+                                System.out.println(i + ") " + Animales.toString());
+                                i++;
                             }
                             break;
                         }
@@ -52,6 +56,7 @@ public class Lab2P2_CesarNunez_12141019 {
                             System.out.print("Nombre científico: ");
                             input.nextLine();
                             String nc = input.nextLine();
+                            System.out.println();
                             for (Animales animal : regAnimales) {
                                 if((animal.getnCientifico()).equals(nc)){
                                     System.out.println(animal.toString());
@@ -65,7 +70,7 @@ public class Lab2P2_CesarNunez_12141019 {
 
                 case 3:{ // modificar animales
                     input.nextLine();
-                    System.out.print("Nombre científico");
+                    System.out.print("Nombre científico: ");
                     String nc = input.nextLine();
                     int pos = -1;
                     for (Animales animal : regAnimales) {
